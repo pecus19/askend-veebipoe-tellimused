@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="005-demo-orders" author="Danila Kirejev" contextFilter="demo">
+        <!-- Demo data goes into a new, empty database, so the orders get ids 1-7 in this order. -->
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000001"/>
+            <column name="status" value="DELIVERED"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-20 09:15:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000002"/>
+            <column name="status" value="CANCELLED"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-22 14:02:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000003"/>
+            <column name="status" value="SHIPPED"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-25 11:40:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000004"/>
+            <column name="status" value="PAID"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-28 08:05:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000005"/>
+            <column name="status" value="PAID"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-30 17:30:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000006"/>
+            <column name="status" value="NEW"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-10-31 19:45:00+00'"/>
+        </insert>
+        <insert tableName="orders">
+            <column name="order_number" value="ORD-2026-000007"/>
+            <column name="status" value="NEW"/>
+            <column name="created_at" valueComputed="TIMESTAMPTZ '2026-11-01 07:10:00+00'"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="1"/>
+            <column name="name" value="Kohvioad 1 kg"/>
+            <column name="quantity" valueNumeric="2"/>
+            <column name="unit_price" valueNumeric="14.90"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="1"/>
+            <column name="name" value="Piimavahustaja"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="24.50"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="2"/>
+            <column name="name" value="Juhtmevabad kõrvaklapid"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="79.99"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="3"/>
+            <column name="name" value="USB-C laadija 65 W"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="39.00"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="3"/>
+            <column name="name" value="USB-C kaabel 2 m"/>
+            <column name="quantity" valueNumeric="3"/>
+            <column name="unit_price" valueNumeric="9.95"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="3"/>
+            <column name="name" value="Sülearvuti kott"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="49.00"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="4"/>
+            <column name="name" value="Joogipudel 0,75 l"/>
+            <column name="quantity" valueNumeric="4"/>
+            <column name="unit_price" valueNumeric="12.50"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="5"/>
+            <column name="name" value="Jooksujalatsid"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="119.00"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="5"/>
+            <column name="name" value="Spordisokid (3 paari)"/>
+            <column name="quantity" valueNumeric="2"/>
+            <column name="unit_price" valueNumeric="11.90"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="6"/>
+            <column name="name" value="Lauamäng"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="34.90"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="6"/>
+            <column name="name" value="Pusle 1000 tk"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="17.49"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="6"/>
+            <column name="name" value="Kingituspaber"/>
+            <column name="quantity" valueNumeric="2"/>
+            <column name="unit_price" valueNumeric="3.20"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="6"/>
+            <column name="name" value="Kaart"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="2.50"/>
+        </insert>
+        <insert tableName="order_items">
+            <column name="order_id" valueNumeric="7"/>
+            <column name="name" value="Raamat: Puhas kood"/>
+            <column name="quantity" valueNumeric="1"/>
+            <column name="unit_price" valueNumeric="42.00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
